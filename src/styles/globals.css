@@ -1,0 +1,346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    
+    /* Updated primary to match Joto branding */
+    --primary: 195 96% 45%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+    
+    /* Additional brand colors */
+    --brand-gradient-start: 195 96% 45%;
+    --brand-gradient-end: 195 96% 38%;
+  }
+ 
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    
+    /* Updated primary to match Joto branding for dark mode */
+    --primary: 195 96% 45%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --ring: 216 34% 17%;
+    
+    --radius: 0.5rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Animation classes */
+.animate-scale-in {
+  animation: scale-in 0.2s ease-in-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add styles for the markdown content */
+.prose pre {
+  @apply bg-muted p-4 rounded-md overflow-x-auto;
+}
+
+.prose code {
+  @apply text-primary bg-muted/50 rounded px-1 py-0.5;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-foreground font-semibold;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul, .prose ol {
+  @apply pl-6;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+/* Enhanced styling for ReactMarkdown in AI Assistant */
+.prose {
+  @apply text-foreground;
+}
+
+/* Fix editor transition and theme persistence */
+[contenteditable] {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Dark mode editor styles */
+.dark [contenteditable] {
+  background-color: #1a1a1a;
+  color: #e1e1e1;
+  border-color: #374151;
+}
+
+/* Light mode editor styles */
+[contenteditable] {
+  background-color: white;
+  color: #333333;
+  border-color: #e5e7eb;
+}
+
+/* Custom styles for editor and AI-generated content */
+[contenteditable] h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+[contenteditable] h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+[contenteditable] h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+[contenteditable] ul,
+[contenteditable] ol {
+  padding-left: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+[contenteditable] li {
+  margin-bottom: 0.25em;
+}
+
+[contenteditable] p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+[contenteditable] strong,
+[contenteditable] b {
+  font-weight: 700;
+}
+
+[contenteditable] em,
+[contenteditable] i {
+  font-style: italic;
+}
+
+/* Hide html and body tags that might appear */
+[contenteditable] html,
+[contenteditable] body {
+  display: contents !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix for ReactMarkdown in AI assistant */
+.prose {
+  color: inherit;
+  max-width: 100%;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: inherit;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.prose p {
+  margin-bottom: 0.75rem;
+}
+
+.prose pre {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.prose code {
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.dark .prose pre {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode specific styles */
+.dark [contenteditable] {
+  background-color: #1a1a1a;
+  color: #e1e1e1;
+  border-color: #374151;
+}
+
+/* Light mode specific styles */
+:not(.dark) [contenteditable] {
+  background-color: white;
+  color: #333333;
+  border-color: #e5e7eb;
+}
+
+/* Dark theme enhancements for inputs and selects */
+.dark [data-radix-select-trigger] {
+  background-color: #1a1a1a;
+  border-color: #374151;
+  color: #e1e1e1;
+}
+
+.dark [data-radix-select-content] {
+  background-color: #1a1a1a;
+  border-color: #374151;
+}
+
+.dark [data-radix-select-item] {
+  color: #e1e1e1;
+}
+
+.dark [data-radix-select-item]:hover {
+  background-color: #2d2d2d;
+}
+
+.dark [data-radix-select-item][data-highlighted] {
+  background-color: #3b3b3b;
+  color: #ffffff;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #6b7280;
+}
+
+.dark input,
+.dark textarea {
+  background-color: #1a1a1a;
+  border-color: #374151;
+  color: #e1e1e1;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
+}
+
+/* Style adjustments for reference page inputs */
+.reference-input-dark {
+  background-color: #1a1a1a !important;
+  border-color: #374151 !important;
+  color: #e1e1e1 !important;
+}
+
+.reference-input-light {
+  background-color: white !important;
+  border-color: #e5e7eb !important;
+  color: #111827 !important;
+}
+
+/* Dark theme for form elements */
+.dark .form-select,
+.dark .form-multiselect,
+.dark .form-textarea,
+.dark .form-input {
+  background-color: #1a1a1a;
+  border-color: #374151;
+  color: #e1e1e1;
+}
+
+/* Checkbox adjustments for dark theme */
+.dark [data-state="checked"] {
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.dark [type="checkbox"] {
+  background-color: #1a1a1a;
+  border-color: #4b5563;
+}
+
+/* References tab specific adjustments */
+.dark .reference-card {
+  background-color: #1a1a1a;
+  border-color: #374151;
+}

@@ -1,0 +1,11 @@
+.question-dropdown {
+    background-color: var(--dropdown-bg-light);
+    color: var(--dropdown-text-light);
+    /* ...existing code... */
+}
+
+[data-theme="dark"] .question-dropdown {
+    background-color: var(--dropdown-bg-dark);
+    color: var(--dropdown-text-dark);
+    /* ...existing code... */
+}

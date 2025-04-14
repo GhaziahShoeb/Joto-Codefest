@@ -1,0 +1,81 @@
+/* Question styling */
+.question-card {
+  transition: all 0.2s ease;
+}
+
+.question-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid hsl(var(--border));
+  margin-bottom: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.option-item:hover {
+  background-color: hsl(var(--secondary));
+}
+
+.option-item.selected {
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+.option-marker {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid hsl(var(--muted-foreground));
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-marker.selected {
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.answer-reveal {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  background-color: hsl(var(--muted) / 0.6);
+  border-left: 4px solid hsl(var(--primary));
+}
+
+/* Range input styling - same as flashcards */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: hsl(var(--primary) / 0.2);
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
