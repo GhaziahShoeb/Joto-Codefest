@@ -4,6 +4,10 @@
 
 Joto is a cutting-edge, AI-powered study assistant designed to revolutionize the way students create, organize, and enhance their study materials. By leveraging the power of Generative AI, Joto transforms ordinary notes into comprehensive study resources, helping students learn more effectively and efficiently.
 
+## 🌐 Live Application
+
+**Visit Joto:** [https://joto-codefest.vercel.app/](https://joto-codefest.vercel.app/)
+
 ## ✨ Key Features
 
 ### 📝 Smart Note Taking
@@ -132,6 +136,8 @@ Joto is a cutting-edge, AI-powered study assistant designed to revolutionize the
 6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Deployment on Vercel
+
+The application is currently deployed at: [https://joto-codefest.vercel.app/](https://joto-codefest.vercel.app/)
 
 ### Option 1: One-Click Deploy
 
