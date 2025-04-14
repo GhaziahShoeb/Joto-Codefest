@@ -173,4 +173,7 @@ We welcome contributions! Feel free to open issues or submit pull requests to im
 **Created By Team ReadLine** 
 ---
 
+#GSoC Innovators Club
+#Summer of CodeFest '25
+
 Happy Studying! 🎓
